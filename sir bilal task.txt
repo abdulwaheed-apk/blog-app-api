@@ -1,0 +1,54 @@
+*Please Try To Make This Assignment By Your Own(you can take help of each other but make it individually)*
+
+*✓ Important for next topic like Authentication and Authorizations*
+ 
+*Scenario*
+*1. Schema*
+a) User 
+{
+UserName
+Email 
+Password
+DateOfBirth
+Blogs[Array of Blog Id]
+}
+
+b) Blog 
+{
+Title 
+Description
+ImageURL[required: false]
+Created Date[default: current time]
+Comments [Array of Comment Id]
+}
+
+c) Comments 
+{
+Comment
+Created Date
+User Id [UserId   *not Array of user Id cause each comment belongs to each user*]
+}
+
+
+*2. Api*
+a) /user/createUser (POST)
+Api will take User detail in body and will create User in database
+
+b)/user/getUsers (GET)
+api will return all Users
+
+c)/user/getSpecificUser (GET)
+Api will take email and password in body and will return Single User Information 
+
+d)/blog/CreateBlog (POST)
+Api will take blog details and User Id  and then will create blog in database and will add(push) Blog Id in User's blog array *[just like we added comment Id in blog's comment array]*
+
+e)/blog/getBlogs (GET)
+Api will return all blogs
+
+f)/blog/getSpecificBlog (GET)
+Api will take blog Id in body and will return Single blog
+
+g)/comment/addcomment (POST)
+Api will take comment detail, blog Id, user id then will create comment in database with user id
+Also will add(push) comment Id in blog's comments array
