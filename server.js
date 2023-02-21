@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use('/api/posts', require('./routes/postsRoute'))
 app.use('/api/comments', require('./routes/commentsRoute'))
-// app.use('/api/users', require('./routes/usersRoute'))
+app.use('/api/users', require('./routes/usersRoute'))
 
 // console.log(process.env.mongoDBURI)
 const port = process.env.PORT || 5000
